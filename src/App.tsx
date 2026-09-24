@@ -20,6 +20,7 @@ function App() {
           />
           <output>24 pastries</output>
         </div>
+        </header>
         <nav aria-label='recipe-sections'>
           <a href='#ingredients'>Ingredients</a>
           <a href='#methods'>Methods</a>
@@ -31,7 +32,7 @@ function App() {
               <li>4 sheets Puff Pastry Sheets (2 Packages)</li>
               <li>1 lb Ground Pork</li>
               <li>1/2 oz Wood Ear Mushrooms</li>
-              <li>2 tbsp Fish Sauce</li>
+              <li>2 tsp Fish Sauce</li>
               <li>1/2 Onion</li>
               <li>1 tsp White Pepper</li>
               <li>1 tsp Salt</li>
@@ -39,7 +40,7 @@ function App() {
               <li>2 Egg Yolks</li>
             </ul>
           </section>
-          <section id='method' className='recipe-card'>
+          <section id='methods' className='recipe-card'>
             <h2>Method</h2>
             <ol>
               <li>Preheat the oven to 375°F and line the baking sheets with greased parchment paper.</li>
@@ -53,7 +54,6 @@ function App() {
             </ol>
           </section>
         </div>
-      </header>
     </main>
   )
 }
