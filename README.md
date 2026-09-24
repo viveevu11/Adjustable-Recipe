@@ -1,75 +1,54 @@
-# React + TypeScript + Vite
+# Pâté Chaud Adjustable Recipe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+Users can use the slider to select from either 12, 24, or 36 pastries. The ingredient quantities update automatically.
 
-Currently, two official plugins are available:
+## Running locally
+1. Clone the repository.
+2. Open the project directory.
+3. Install the dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+   ```bash
+   npm install
+   ```
 
-## React Compiler
+4. Start the development server:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```bash
+   npm run dev
+   ```
 
-## Expanding the ESLint configuration
+5. Open the local URL displayed in the terminal.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Keyboard operation
+- Tab to the slider.
+- Use the arrow keys to change quantities.
+- Tab to the section links and activate them with Enter.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Accessibility
+- Semantic HTML
+- Connected slider label
+- Visible focus indicators
+- Live announcement when quantities update
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Responsive design
+- Two cards on wide screens
+- Cards stack on narrow screens
+- Section links provide quick access between Ingredients and Method
+- Tested at 320px without horizontal scrolling
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Testing
+- Keyboard-only navigation
+- Narrator screen-reader announcements
+- Responsive layout at 320px
+- `npm run lint`
+- `npm run build`
 
-```
+## Recipe credit
+This project adapts the [Pâté Chaud recipe from Cooking Therapy](https://www.cooking-therapy.com/pate-chaud-banh-pate-so/).
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+## Out of scope
+- Multiple recipes
+- User accounts
+- Saving serving preferences
+- Backend storage
