@@ -42,11 +42,14 @@ function App() {
             onChange={(event) => setPastryCount(Number(event.target.value))}
           />
           <output>{pastryCount} pastries</output>
+          <p className="visually-hidden" aria-live="polite" aria-atomic="true">
+  Makes {pastryCount} pastries. Ingredient quantities updated.
+</p>
         </div>
         </header>
         <nav aria-label='recipe-sections'>
           <a href='#ingredients'>Ingredients</a>
-          <a href='#methods'>Methods</a>
+          <a href='#method'>Method</a>
         </nav>
         <div className='recipe-layout'>
           <section id='ingredients' className='recipe-card'>
@@ -63,7 +66,7 @@ function App() {
               <li>{2 * scaleFactor} Egg Yolks</li>
             </ul>
           </section>
-          <section id='methods' className='recipe-card'>
+          <section id='method' className='recipe-card'>
             <h2>Method</h2>
             <ol>
               <li>Preheat the oven to 375°F and line the baking sheets with greased parchment paper.</li>
