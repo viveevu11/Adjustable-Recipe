@@ -3,6 +3,27 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [pastryCount, setPastryCount] = useState(24);
+  const scaleFactor = pastryCount / 24;
+
+  function formatQuantity(value: number) {
+    const whole = Math.floor(value);
+    const decimal = Number((value - whole).toFixed(2));
+
+    const fractions: Record<number, string> = {
+      0.25: "¼",
+      0.5: "½",
+      0.75: "¾",
+    };
+
+    if (decimal === 0) {
+      return String(whole);
+    }
+
+    const fraction = fractions[decimal];
+
+    return whole === 0 ? fraction : `${whole} ${fraction}`;
+  }
 
   return (
     <main id='main-content'>
@@ -17,8 +38,10 @@ function App() {
             min='12'
             max='36'
             step='12'
+            value = {pastryCount}
+            onChange={(event) => setPastryCount(Number(event.target.value))}
           />
-          <output>24 pastries</output>
+          <output>{pastryCount} pastries</output>
         </div>
         </header>
         <nav aria-label='recipe-sections'>
@@ -29,15 +52,15 @@ function App() {
           <section id='ingredients' className='recipe-card'>
             <h2>Ingredients</h2>
             <ul>
-              <li>4 sheets Puff Pastry Sheets (2 Packages)</li>
-              <li>1 lb Ground Pork</li>
-              <li>1/2 oz Wood Ear Mushrooms</li>
-              <li>2 tsp Fish Sauce</li>
-              <li>1/2 Onion</li>
-              <li>1 tsp White Pepper</li>
-              <li>1 tsp Salt</li>
-              <li>1 tsp Garlic Powder</li>
-              <li>2 Egg Yolks</li>
+              <li>{formatQuantity(4 * scaleFactor)} sheets Puff Pastry Sheets ({2 * scaleFactor} Packages)</li>
+              <li>{formatQuantity(1 * scaleFactor)} lb Ground Pork</li>
+              <li>{formatQuantity(0.5 * scaleFactor)} oz Wood Ear Mushrooms</li>
+              <li>{2 * scaleFactor} tsp Fish Sauce</li>
+              <li>{formatQuantity(0.5 * scaleFactor)} Onion</li>
+              <li>{formatQuantity(1 * scaleFactor)} tsp White Pepper</li>
+              <li>{formatQuantity(1 * scaleFactor)} tsp Salt</li>
+              <li>{formatQuantity(1 * scaleFactor)} tsp Garlic Powder</li>
+              <li>{2 * scaleFactor} Egg Yolks</li>
             </ul>
           </section>
           <section id='methods' className='recipe-card'>
