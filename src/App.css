@@ -22,12 +22,12 @@ header {
 }
 
 .recipe-card {
-    text-align: left;
-    border: 4px solid black;
-    border-radius: 12px;
     padding: 1.5rem;
-    background: #FFFFFF;
-    border-color: #C65375;
+    background: #ffffff;
+    border: 2px solid #c65375;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgb(90 31 50 / 12%);
+    text-align: left;
 }
 
 h1 {
@@ -74,5 +74,27 @@ nav {
 }
 
 .recipe-card h2 {
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    color: #5a1f32;
     text-align: center;
+    border-bottom: 1px solid #f0bdcc;
+}
+
+nav a {
+    color: #8a294a;
+    font-weight: 700;
+    padding: 0.5rem 0.75rem;
+    text-underline-offset: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+nav a:hover {
+    color: #5a1f32;
+    background: #f8dce5;
+}
+
+h1,
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
 }
